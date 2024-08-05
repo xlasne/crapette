@@ -14,9 +14,8 @@
         <nav>
             <ul>
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#rules">Rules</a></li>
                 <li><a href="#setup">Setup</a></li>
-                <li><a href="#play">How to Play</a></li>
+                <li><a href="#rules">Rules</a></li>
             </ul>
         </nav>
     </header>
@@ -24,36 +23,52 @@
     <main>
         <section id="overview">
             <h2>Overview</h2>
-            <p>Crapette, also known as Russian Bank, is a competitive patience card game for two players. The objective
-                is to be the first to move all your reserve cards to the foundation piles.</p>
+            <p>Crapette, also known as Russian Bank, is a competitive patience card game for two players.
+                 The goal of Crapette is to be the first player to play all of his cards</p>
         </section>
+
+                <section id="setup">
+                    <h2>Setup</h2>
+                    <ol>
+                        <li>Shuffle your deck and deal 13 cards face down as your reserve pile, with the top card face up.</li>
+                        <li>Place the remaining 39 cards face down as your stock pile.</li>
+                        <li>Deal four cards face up next to your reserve pile as your tableau.</li>
+                    </ol>
+                </section>
 
         <section id="rules">
             <h2>Rules</h2>
-            <p>The game is played with two standard 52-card decks. Each player deals 13 cards into a reserve pile and
-                places the remaining cards in a stock pile. Players take turns to move cards to the foundation piles or
-                tableau.</p>
-        </section>
-
-        <section id="setup">
-            <h2>Setup</h2>
-            <ol>
-                <li>Shuffle your deck and deal 13 cards face down as your reserve pile, with the top card face up.</li>
-                <li>Place the remaining 39 cards face down as your stock pile.</li>
-                <li>Deal four cards face up next to your reserve pile as your tableau.</li>
-            </ol>
-        </section>
-
-        <section id="play">
-            <h2>How to Play</h2>
-            <p>On your turn, you can:</p>
+            <p>On his turn, a player shall play a playable visible card according to the following prioritized rules:</p>
+            <p>The playable cards are:</p>
             <ul>
-                <li>Move the top card of your reserve pile to a foundation or tableau pile.</li>
-                <li>Move cards between tableau piles.</li>
-                <li>Draw from your stock pile if no other moves are possible.</li>
+                <li>The last card of each tableau row</li>
+                <li>The visible reserve card, or, if the reserve is empty, the visible waste card</li>
+                <li>The visible top talon card</li>
             </ul>
-            <p>The game continues until one player moves all their reserve cards to the foundations.</p>
+            <h2>Rule 1: Grow Foundation</h2>
+            <p>If a card can be put on Foundation, then this is the top priority.</p>
+            <h2>Rule 2: Crapotting</h2>
+            <p>To crapot is to move a card on the opponent reserve or waste visible card.</p>
+            <p>The moving card shall be of the same suit, and be 1 value above or below:</p>
+            <ul>
+                <li>If the reserve visible card is a 4♣️, opponent can put a 5♣️ or a 3♣️</li>
+            </ul>
+            <h2>Rule 3: Free Tableau Rows</h2>
+            <p>Player can move cards in order to free a row.</p>
+            <h2>Rule 4</h2>
+            <p>If no prioritized move is possible and the top reserve card is hidden, then the player can flip and show it, then the
+                rules above apply.</p>
+            <h2>Rule 5</h2>
+            <p>If no prioritized move is possible and the top stock card is hidden, then the player can flip and show it, then the
+                rules above apply.</p>
+            <p>If no prioritized move is possible and the top stock card is visible, then the player can end his turn and place his
+                top stock card on the waste pile.</p>
+            <p>If the player fails to perform a prioritized move, then the opponent can shout "Crapette" and explain the reason for
+                the failure. The faulty player shall then cancel his last move or card flip and resign his turn to the opponent.</p>
+            <h2>Winning</h2>
+            <p>The first player to have no more cards in his reserve, stock, and waste is the winner.</p>
         </section>
+
     </main>
 
     <footer>
