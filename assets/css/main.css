@@ -3565,7 +3565,7 @@ input, select, textarea {
 			pointer-events: auto;
 			border-style: solid;
 			border-color: #ffffff;
-			border-width: 5px !important;
+			border-width: 1px !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 2.25rem;
 			font-weight: 900;
@@ -3575,6 +3575,13 @@ input, select, textarea {
 			text-transform: uppercase;
 			visibility: visible;
 		}
+
+				/* Ensure the icon aligns nicely */
+				#header .logo img {
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 auto;
+				}
 
 			#header .logo:hover {
 				border-color: #18bfef !important;
