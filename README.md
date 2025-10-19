@@ -1,2 +1,0 @@
-# crapette
-Crapette card game
