@@ -4694,3 +4694,102 @@ input, select, textarea {
 		}
 
 	}
+
+/* Custom: featured screenshot + text — stacked on narrow screens, side-by-side on wide screens */
+	.feature-media {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2.5rem;
+		margin: 4rem 0;
+	}
+
+		.feature-media > .phone-frame {
+			width: 100%;
+			max-width: 280px;
+			margin: 0;
+			flex-shrink: 0;
+		}
+
+		.feature-media > p {
+			margin: 0;
+		}
+
+		@media screen and (min-width: 737px) {
+
+			.feature-media {
+				flex-direction: row;
+				align-items: center;
+			}
+
+				.feature-media > .phone-frame {
+					max-width: 240px;
+				}
+
+				.feature-media > p {
+					flex: 1;
+				}
+
+		}
+
+	/* CSS-drawn iPhone frame around the gameplay screenshot — no mockup image needed */
+	.phone-frame {
+		position: relative;
+		box-sizing: border-box;
+		padding: 12px;
+		background: linear-gradient(155deg, #3a3a3c, #0f0f10);
+		border-radius: 13.5%/6.5%;
+		box-shadow:
+			0 25px 50px rgba(0, 0, 0, 0.4),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+	}
+
+		.phone-frame:before, .phone-frame:after {
+			content: '';
+			position: absolute;
+			background: #0f0f10;
+		}
+
+		/* volume buttons */
+		.phone-frame:before {
+			left: -3px;
+			top: 22%;
+			width: 3px;
+			height: 9%;
+			border-radius: 2px 0 0 2px;
+			box-shadow: 0 12% 0 0 #0f0f10;
+		}
+
+		/* power button */
+		.phone-frame:after {
+			right: -3px;
+			top: 26%;
+			width: 3px;
+			height: 14%;
+			border-radius: 0 2px 2px 0;
+		}
+
+		.phone-frame .screen {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10.5%/5%;
+			background: #000;
+		}
+
+			.phone-frame .screen img {
+				display: block;
+				width: 100%;
+			}
+
+			.phone-frame .notch {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 34%;
+				height: 3.2%;
+				min-height: 18px;
+				background: #0f0f10;
+				border-radius: 0 0 14px 14px;
+			}
