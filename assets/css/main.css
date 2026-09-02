@@ -3565,13 +3565,13 @@ input, select, textarea {
 			pointer-events: auto;
 			border-style: solid;
 			border-color: #ffffff;
-			border-width: 0 !important;
+			border-width: 2px !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 2.25rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			line-height: 1;
-			padding: 0;
+			padding: 0.5rem;
 			text-transform: uppercase;
 			visibility: visible;
 		}
@@ -3581,7 +3581,7 @@ input, select, textarea {
 					display: inline-block;
 					vertical-align: middle;
 					margin: 0 auto;
-					height: 11rem;
+					height: 10rem;
 				}
 
 			#header .logo:hover {
@@ -3597,7 +3597,7 @@ input, select, textarea {
 			}
 
 				#header .logo img {
-					height: 9rem;
+					height: 8rem;
 				}
 
 		}
@@ -3610,7 +3610,7 @@ input, select, textarea {
 
 				#header .logo {
 					font-size: 1.75rem;
-					border-width: 0 !important;
+					border-width: 2px !important;
 				}
 
 		}
