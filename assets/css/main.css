@@ -3565,22 +3565,23 @@ input, select, textarea {
 			pointer-events: auto;
 			border-style: solid;
 			border-color: #ffffff;
-			border-width: 1px !important;
+			border-width: 0 !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 2.25rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			line-height: 1;
-			padding: 1rem 1.75rem;
+			padding: 0;
 			text-transform: uppercase;
 			visibility: visible;
 		}
 
-				/* Ensure the icon aligns nicely */
+				/* Ensure the icon aligns nicely (sized so its top lines up with the mobile Menu toggle) */
 				#header .logo img {
 					display: inline-block;
 					vertical-align: middle;
 					margin: 0 auto;
+					height: 11rem;
 				}
 
 			#header .logo:hover {
@@ -3595,6 +3596,10 @@ input, select, textarea {
 				padding-bottom: 4rem;
 			}
 
+				#header .logo img {
+					height: 9rem;
+				}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3605,10 +3610,20 @@ input, select, textarea {
 
 				#header .logo {
 					font-size: 1.75rem;
-					border-width: 3px !important;
+					border-width: 0 !important;
 				}
 
 		}
+
+/* Share buttons (Crapette Pro): wrap instead of overflowing past the viewport edge */
+
+	#shareButtons {
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		row-gap: 0.75rem;
+	}
 
 /* Nav */
 
