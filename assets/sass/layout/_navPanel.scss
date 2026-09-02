@@ -96,6 +96,11 @@
 			}
 		}
 
+		.lang-switch {
+			border-top: solid 2px _palette(border);
+			padding: 0.75rem 0;
+		}
+
 		.close {
 			@include icon(false, solid);
 			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
