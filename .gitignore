@@ -5,3 +5,14 @@
 .vscode/
 .idea/
 *.swp
+
+# Symlink to strategy/submission docs living in the PRIVATE crapette-swift repo.
+# Never commit this — it is a working convenience only.
+_private-docs
+_private-docs/
+
+# Scratch
+*.tmp
+
+# Agent guide — local only, not published
+CLAUDE.md

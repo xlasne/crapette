@@ -3571,7 +3571,7 @@ input, select, textarea {
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			line-height: 1;
-			padding: 0.5rem;
+			padding: 0;
 			text-transform: uppercase;
 			visibility: visible;
 		}
