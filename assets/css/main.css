@@ -52,7 +52,7 @@ table {
 }
 
 body {
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
 }
 
 mark {
@@ -4944,3 +4944,35 @@ input, select, textarea {
 				background: #0f0f10;
 				border-radius: 0 0 14px 14px;
 			}
+
+/* Custom: phone readability — larger, darker, left-aligned body text on small screens (Xavier, 25 Sept. 2026) */
+	@media screen and (max-width: 736px) {
+
+		body, input, select, textarea {
+			font-size: 1.2rem;
+			font-weight: 400;
+			line-height: 1.75;
+		}
+
+		p, li, td {
+			text-align: left;
+		}
+
+		p {
+			margin-bottom: 1.25rem;
+		}
+
+		#main > .post header.major > p, .about-point .lead {
+			font-size: 1.1rem;
+		}
+
+		table td, table th {
+			padding: 0.6rem 0.5rem;
+		}
+
+		#copyright {
+			font-size: 0.8rem;
+		}
+
+	}
+

@@ -30,7 +30,7 @@
 
 	const STRINGS = {
 		en: {
-			shareMessage: `Check out ${GAME_NAME} - An iPhone Card Game designed to train your brain! Download now: ${APP_STORE_URL}`,
+			shareMessage: `Check out ${GAME_NAME} - a card game for iPhone and iPad, designed to train your brain! Download now: ${APP_STORE_URL}`,
 			shareDescription: `${GAME_NAME} is a classic card game to train your brain. Download it on the App Store!`,
 			tweetText: `I just discovered ${GAME_NAME}! Check it out: ${APP_STORE_URL}`,
 			emailSubject: `Check out ${GAME_NAME}!`,
@@ -40,7 +40,7 @@
 			copied: 'Copied!'
 		},
 		fr: {
-			shareMessage: `Découvrez ${GAME_NAME} - Un jeu de cartes sur iPhone conçu pour entraîner votre cerveau ! Téléchargez-le maintenant : ${APP_STORE_URL}`,
+			shareMessage: `Découvrez ${GAME_NAME} - un jeu de cartes pour iPhone et iPad, conçu pour entraîner votre cerveau ! Téléchargez-le maintenant : ${APP_STORE_URL}`,
 			shareDescription: `${GAME_NAME} est un jeu de cartes classique pour entraîner votre cerveau. Téléchargez-le sur l'App Store !`,
 			tweetText: `Je viens de découvrir ${GAME_NAME} ! À voir : ${APP_STORE_URL}`,
 			emailSubject: `Découvrez ${GAME_NAME} !`,
