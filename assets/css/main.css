@@ -4821,7 +4821,7 @@ input, select, textarea {
 			flex-shrink: 0;
 		}
 
-		.feature-media > p {
+		.feature-media > p, .feature-media > div {
 			margin: 0;
 		}
 
@@ -4836,10 +4836,51 @@ input, select, textarea {
 					max-width: 240px;
 				}
 
-				.feature-media > p {
+				.feature-media > p, .feature-media > div {
 					flex: 1;
 				}
 
+		}
+
+	/* Custom: About page — one section per point, screenshot alternating left / right */
+	.about-point .feature-media {
+		margin: 2rem 0;
+	}
+
+		.about-point h2 {
+			margin-bottom: 1rem;
+		}
+
+		.about-point .lead {
+			font-size: 1.1rem;
+		}
+
+		@media screen and (min-width: 737px) {
+
+			.feature-media.reverse {
+				flex-direction: row-reverse;
+			}
+
+		}
+
+	.about-point.author {
+		text-align: center;
+		margin: 3rem 0;
+	}
+
+		.about-point.author blockquote {
+			display: inline-block;
+			max-width: 36rem;
+			text-align: left;
+			font-size: 1.1rem;
+		}
+
+		.about-point.author cite {
+			display: block;
+			margin-top: 1rem;
+			text-align: right;
+			font-style: normal;
+			font-weight: bold;
 		}
 
 	/* CSS-drawn iPhone frame around the gameplay screenshot — no mockup image needed */
