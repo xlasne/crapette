@@ -10,17 +10,15 @@
 	// Configuration
 	const GAME_NAME = 'Crapette Pro';
 	// Always build a real, shareable production URL, even when this page is
-	// opened locally (file://) or from a preview server: extract the page's
-	// filename (and /fr/ if present) from the current path and point it at
-	// the live site, so Share/Copy Link never hands out a file:// or
-	// localhost address.
+	// opened locally (file://) or from a preview server: point at the live
+	// site, so Share/Copy Link never hands out a file:// or localhost
+	// address. The link shared is the home page of the current language
+	// (/fr/ if present in the path) — the share page itself is not the
+	// page a friend should land on.
 	const PROD_BASE = 'https://xlasne.github.io/crapette';
 	function getShareUrl() {
-		const path = window.location.pathname;
-		const segments = path.split('/').filter(Boolean);
-		const filename = segments.length ? segments[segments.length - 1] : 'index.html';
-		const isFr = /(^|\/)fr(\/|$)/.test(path);
-		return PROD_BASE + (isFr ? '/fr/' : '/') + (filename || 'index.html');
+		const isFr = /(^|\/)fr(\/|$)/.test(window.location.pathname);
+		return PROD_BASE + (isFr ? '/fr/' : '/') + 'index.html';
 	}
 	const GAME_URL = getShareUrl();
 	const APP_STORE_URL = 'https://apps.apple.com/app/6608980248';

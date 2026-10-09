@@ -4855,6 +4855,11 @@ input, select, textarea {
 			font-size: 1.1rem;
 		}
 
+		/* the home page's featured post centres its text; a list reads left-aligned */
+		.about-point ul {
+			text-align: left;
+		}
+
 		@media screen and (min-width: 737px) {
 
 			.feature-media.reverse {
