@@ -21,7 +21,7 @@
 		return PROD_BASE + (isFr ? '/fr/' : '/') + 'index.html';
 	}
 	const GAME_URL = getShareUrl();
-	const APP_STORE_URL = 'https://apps.apple.com/app/6608980248';
+	const APP_STORE_URL = 'https://apps.apple.com/app/id6608980248';
 
 	// Language detection (based on <html lang="..."> set on each page)
 	const LANG = (document.documentElement.lang || 'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
