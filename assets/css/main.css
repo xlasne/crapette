@@ -4715,8 +4715,13 @@ input, select, textarea {
 				}
 
 		#navPanel .lang-switch {
+			-moz-flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
 			border-top: solid 2px rgba(220, 220, 220, 0.5);
 			padding: 0.75rem 0;
+			row-gap: 0.75rem;
 		}
 
 		#navPanel .close {

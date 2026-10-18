@@ -13,18 +13,19 @@
 	// opened locally (file://) or from a preview server: point at the live
 	// site, so Share/Copy Link never hands out a file:// or localhost
 	// address. The link shared is the home page of the current language
-	// (/fr/ if present in the path) — the share page itself is not the
+	// (/fr/, /de/… if present in the path) — the share page itself is not the
 	// page a friend should land on.
 	const PROD_BASE = 'https://xlasne.github.io/crapette';
 	function getShareUrl() {
-		const isFr = /(^|\/)fr(\/|$)/.test(window.location.pathname);
-		return PROD_BASE + (isFr ? '/fr/' : '/') + 'index.html';
+		const dir = window.location.pathname.match(/(?:^|\/)(fr|de|es|it|nl)\//);
+		return PROD_BASE + (dir ? '/' + dir[1] + '/' : '/') + 'index.html';
 	}
 	const GAME_URL = getShareUrl();
 	const APP_STORE_URL = 'https://apps.apple.com/app/id6608980248';
 
 	// Language detection (based on <html lang="..."> set on each page)
-	const LANG = (document.documentElement.lang || 'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+	const PAGE_LANG = (document.documentElement.lang || 'en').toLowerCase().slice(0, 2);
+	const LANG = ['fr', 'de', 'es', 'it', 'nl'].indexOf(PAGE_LANG) >= 0 ? PAGE_LANG : 'en';
 
 	const STRINGS = {
 		en: {
@@ -46,6 +47,46 @@
 			webShareUnsupported: "L'API de partage web n'est pas prise en charge par ce navigateur.",
 			copyFailed: 'Échec de la copie du lien. Veuillez réessayer.',
 			copied: 'Copié !'
+		},
+		de: {
+			shareMessage: `Entdecke ${GAME_NAME} – ein Kartenspiel für iPhone und iPad, das dein Gehirn trainiert! Jetzt laden: ${APP_STORE_URL}`,
+			shareDescription: `${GAME_NAME} ist ein klassisches Kartenspiel, das dein Gehirn trainiert. Jetzt im App Store!`,
+			tweetText: `Ich habe gerade ${GAME_NAME} entdeckt! Schau mal: ${APP_STORE_URL}`,
+			emailSubject: `Entdecke ${GAME_NAME}!`,
+			emailBody: (message) => `Ich glaube, ${GAME_NAME} wird dir gefallen!\n\n${message}\n\nJetzt laden!`,
+			webShareUnsupported: 'Teilen wird von diesem Browser nicht unterstützt.',
+			copyFailed: 'Der Link konnte nicht kopiert werden. Bitte versuche es erneut.',
+			copied: 'Kopiert!'
+		},
+		es: {
+			shareMessage: `Descubre ${GAME_NAME}, un juego de cartas para iPhone y iPad pensado para entrenar tu mente. Descárgalo ya: ${APP_STORE_URL}`,
+			shareDescription: `${GAME_NAME} es un juego de cartas clásico para entrenar tu mente. ¡Descárgalo en el App Store!`,
+			tweetText: `¡Acabo de descubrir ${GAME_NAME}! Échale un vistazo: ${APP_STORE_URL}`,
+			emailSubject: `¡Descubre ${GAME_NAME}!`,
+			emailBody: (message) => `¡Creo que te va a encantar ${GAME_NAME}!\n\n${message}\n\n¡Descárgalo ya!`,
+			webShareUnsupported: 'Este navegador no permite compartir.',
+			copyFailed: 'No se ha podido copiar el enlace. Inténtalo de nuevo.',
+			copied: '¡Copiado!'
+		},
+		it: {
+			shareMessage: `Scopri ${GAME_NAME}, un gioco di carte per iPhone e iPad pensato per allenare la mente! Scaricalo ora: ${APP_STORE_URL}`,
+			shareDescription: `${GAME_NAME} è un classico gioco di carte per allenare la mente. Scaricalo dall'App Store!`,
+			tweetText: `Ho appena scoperto ${GAME_NAME}! Dai un'occhiata: ${APP_STORE_URL}`,
+			emailSubject: `Scopri ${GAME_NAME}!`,
+			emailBody: (message) => `Credo che ${GAME_NAME} ti piacerà!\n\n${message}\n\nScaricalo ora!`,
+			webShareUnsupported: 'Questo browser non supporta la condivisione.',
+			copyFailed: 'Impossibile copiare il link. Riprova.',
+			copied: 'Copiato!'
+		},
+		nl: {
+			shareMessage: `Ontdek ${GAME_NAME}, een kaartspel voor iPhone en iPad dat je brein traint! Download het nu: ${APP_STORE_URL}`,
+			shareDescription: `${GAME_NAME} is een klassiek kaartspel dat je brein traint. Download het in de App Store!`,
+			tweetText: `Ik heb net ${GAME_NAME} ontdekt! Kijk maar: ${APP_STORE_URL}`,
+			emailSubject: `Ontdek ${GAME_NAME}!`,
+			emailBody: (message) => `Ik denk dat je ${GAME_NAME} geweldig gaat vinden!\n\n${message}\n\nDownload het nu!`,
+			webShareUnsupported: 'Delen wordt niet ondersteund in deze browser.',
+			copyFailed: 'Kopiëren van de link is mislukt. Probeer het opnieuw.',
+			copied: 'Gekopieerd!'
 		}
 	};
 

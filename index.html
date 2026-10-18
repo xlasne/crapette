@@ -9,13 +9,14 @@
 		<script>
 		(function(){
 			try {
+				var langs = ['fr', 'de', 'es', 'it', 'nl'];
 				var pref = localStorage.getItem('crapette_lang');
-				if (pref === 'fr') { window.location.replace('fr/index.html'); return; }
-				if (pref) { return; }
-				var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-				if (lang.indexOf('fr') === 0) {
-					window.location.replace('fr/index.html');
+				if (pref) {
+					if (langs.indexOf(pref) >= 0) { window.location.replace(pref + '/index.html'); }
+					return;
 				}
+				var lang = (navigator.language || navigator.userLanguage || '').toLowerCase().slice(0, 2);
+				if (langs.indexOf(lang) >= 0) { window.location.replace(lang + '/index.html'); }
 			} catch (e) {}
 		})();
 		</script>
@@ -30,9 +31,13 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 		<link rel="alternate" hreflang="en" href="https://xlasne.github.io/crapette/index.html" />
 		<link rel="alternate" hreflang="fr" href="https://xlasne.github.io/crapette/fr/index.html" />
+		<link rel="alternate" hreflang="de" href="https://xlasne.github.io/crapette/de/index.html" />
+		<link rel="alternate" hreflang="es" href="https://xlasne.github.io/crapette/es/index.html" />
+		<link rel="alternate" hreflang="it" href="https://xlasne.github.io/crapette/it/index.html" />
+		<link rel="alternate" hreflang="nl" href="https://xlasne.github.io/crapette/nl/index.html" />
 		<link rel="alternate" hreflang="x-default" href="https://xlasne.github.io/crapette/index.html" />
 		<link rel="canonical" href="https://xlasne.github.io/crapette/index.html" />
-		<link rel="stylesheet" href="assets/css/main.css?v=20261005" />
+		<link rel="stylesheet" href="assets/css/main.css?v=20261018" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -66,7 +71,11 @@
 						</ul>
 						<ul class="lang-switch">
 							<li class="lang-item is-active"><span class="flag" aria-hidden="true">🇬🇧</span> EN</li>
-							<li class="lang-item"><a href="fr/index.html" data-lang="fr" title="Voir en français" onclick="try{localStorage.setItem('crapette_lang','fr');}catch(e){}"><span class="flag" aria-hidden="true">🇫🇷</span> FR</a></li>
+							<li class="lang-item"><a href="fr/index.html" data-lang="fr" hreflang="fr" title="Voir en français" onclick="try{localStorage.setItem('crapette_lang','fr');}catch(e){}"><span class="flag" aria-hidden="true">🇫🇷</span> FR</a></li>
+							<li class="lang-item"><a href="de/index.html" data-lang="de" hreflang="de" title="Auf Deutsch ansehen" onclick="try{localStorage.setItem('crapette_lang','de');}catch(e){}"><span class="flag" aria-hidden="true">🇩🇪</span> DE</a></li>
+							<li class="lang-item"><a href="es/index.html" data-lang="es" hreflang="es" title="Ver en español" onclick="try{localStorage.setItem('crapette_lang','es');}catch(e){}"><span class="flag" aria-hidden="true">🇪🇸</span> ES</a></li>
+							<li class="lang-item"><a href="it/index.html" data-lang="it" hreflang="it" title="Vedi in italiano" onclick="try{localStorage.setItem('crapette_lang','it');}catch(e){}"><span class="flag" aria-hidden="true">🇮🇹</span> IT</a></li>
+							<li class="lang-item"><a href="nl/index.html" data-lang="nl" hreflang="nl" title="Bekijk in het Nederlands" onclick="try{localStorage.setItem('crapette_lang','nl');}catch(e){}"><span class="flag" aria-hidden="true">🇳🇱</span> NL</a></li>
 						</ul>
 					</nav>
 
